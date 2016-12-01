@@ -19,8 +19,6 @@ are simply shell scripts using ApacheBench.
 ### Infrastructure
 
 Hardware: [Rackspace OnMetal v2 Large](https://www.rackspace.com/en-us/cloud/servers/onmetal/specs)
-  - RAM: 128 GB
-  - Disk: 800 GB
 Operating System: Ubuntu 14.04 LTS (Trusty Tahr)
 
 ### Deployment
