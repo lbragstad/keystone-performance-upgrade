@@ -18,8 +18,8 @@ are simply shell scripts using ApacheBench.
 
 ### Infrastructure
 
-Hardware: [Rackspace OnMetal v2 Large](https://www.rackspace.com/en-us/cloud/servers/onmetal/specs)
-Operating System: Ubuntu 14.04 LTS (Trusty Tahr)
+- Hardware: [Rackspace OnMetal v2 Large](https://www.rackspace.com/en-us/cloud/servers/onmetal/specs)
+- Operating System: Ubuntu 14.04 LTS (Trusty Tahr)
 
 ### Deployment
 
