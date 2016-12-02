@@ -1,0 +1,53 @@
+Creating a token to run benchmarks with...
+Admin token: gAAAAABYQZFpU40_B_ovGGobt3SMPpos_AA8bVL1xow5HPVKM7-eOdIdjs0KiaKgEbFJgG2AstYxGQANXkiRoUvJ4fBJjPvyDsHgT-jyqb2oU7CtKPxZ159R5Flo726mKhaIF_qp5bHt_vpQyhtWk7XcrI1Lc4vw42fIHA-HbxZP2GXtBikOQ_w
+Subject token: gAAAAABYQZFqpz16hNO7y6xLiskJb7khjmxJL3JESD6Oy0nNbeiRsZAVb9Sv9XOLdsrb7fCihK0RX7F53zY9hhloIeGlb6L2Z7kVIdjnEEfKyhPWNBg01isW49MtUWZVLISgYzf4GYiHXJz78AIIsC8vn37y-SjWbD4IarZUMr_iOy84z5UB2wA
+Warming up Apache...
+Benchmarking token validation...
+This is ApacheBench, Version 2.3 <$Revision: 1528965 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking 172.29.236.100 (be patient)
+Completed 5000 requests
+Completed 10000 requests
+Completed 15000 requests
+^C
+
+Server Software:        Apache
+Server Hostname:        172.29.236.100
+Server Port:            5000
+
+Document Path:          /v3/auth/tokens
+Document Length:        7873 bytes
+
+Concurrency Level:      4
+Time taken for tests:   267.573 seconds
+Complete requests:      18885
+Failed requests:        6662
+   (Connect: 0, Receive: 0, Length: 6662, Exceptions: 0)
+Non-2xx responses:      6659
+Total transferred:      104286879 bytes
+HTML transferred:       96990777 bytes
+Requests per second:    70.58 [#/sec] (mean)
+Time per request:       56.674 [ms] (mean)
+Time per request:       14.169 [ms] (mean, across all concurrent requests)
+Transfer rate:          380.62 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       2
+Processing:     9   57  78.2     56    5328
+Waiting:        0   56  78.0     56    5328
+Total:          9   57  78.2     56    5329
+
+Percentage of the requests served within a certain time (ms)
+  50%     56
+  66%     67
+  75%     74
+  80%     77
+  90%     85
+  95%     91
+  98%    100
+  99%    109
+ 100%   5329 (longest request)
+

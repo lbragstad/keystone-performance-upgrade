@@ -14,4 +14,4 @@ ab -c 100 -n 1000 -T 'application/json' http://$HOST/v3/ > /dev/null 2>&1
 # This will run until it's interrupted, at which point it will print a
 # report summarizing the run.
 echo "Benchmarking token validation..."
-ab -r -c 4 -t 60 -T 'application/json' -H "X-Auth-Token: $ADMIN_TOKEN" -H "X-Subject-Token: $SUBJECT_TOKEN" http://$HOST/v3/auth/tokens
+ab -r -c 4 -t 0 -T 'application/json' -H "X-Auth-Token: $ADMIN_TOKEN" -H "X-Subject-Token: $SUBJECT_TOKEN" http://$HOST/v3/auth/tokens
