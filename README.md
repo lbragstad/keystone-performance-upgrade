@@ -34,10 +34,10 @@ making only a couple modifications after laying down the initial infrastructure.
 
 ## Stable Newton Install Process
 
-Checkout `stable/newton`
-Run `scripts/bootstrap-ansible.sh`
-Run `scripts/bootstrap-aio.sh`
-Modify `keystome.yml` affinity setting
+1. Checkout `stable/newton`
+2. Run `scripts/bootstrap-ansible.sh`
+3. Run `scripts/bootstrap-aio.sh`
+4. Modify `keystome.yml` affinity setting
 ```
 ---
 identity_hosts:
@@ -46,9 +46,9 @@ identity_hosts:
       keystone_container: 2
     ip: 172.29.236.100
 ```
-Run `openstack-ansible playbooks/setup-hosts.yml`
-Run `openstack-ansible playbooks/setup-infrastructure.yml`
-Run `openstack-ansible playbooks/os-keystone-install.yml`
+5. Run `openstack-ansible playbooks/setup-hosts.yml`
+6. Run `openstack-ansible playbooks/setup-infrastructure.yml`
+7. Run `openstack-ansible playbooks/os-keystone-install.yml`
 
 ## Upgrade Process
 
