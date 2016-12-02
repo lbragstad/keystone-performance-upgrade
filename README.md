@@ -43,12 +43,14 @@ making only a couple modifications after laying down the initial infrastructure.
 7. Run `openstack-ansible playbooks/os-keystone-install.yml`
 
 [0] place the following in `/etc/openstack_deploy/conf.d/keystone.yml`:
+
+
 ```
 ---
 identity_hosts:
-aio1:
+  aio1:
     affinity:
-    keystone_container: 2
+      keystone_container: 2
     ip: 172.29.236.100
 ```
 
