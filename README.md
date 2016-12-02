@@ -32,14 +32,12 @@ I started by following the developer guide for an [all-in-one
 installation](http://docs.openstack.org/developer/openstack-ansible/developer-docs/quickstart-aio.html)
 making only a couple modifications after laying down the initial infrastructure.
 
-By default, the all-in-one installation provides a single container per service.
-This is to save resources when using the same setup in gate jobs. In order for
-us to test the upgrade scenario outlined above, we will need to make sure we
-have more than one keystone node deployed.
+## Stable Newton Install Process
 
-After executing `# scripts/run-playbooks.sh`, I modified `/etc/openstack_deploy/conf.d/keystone.yml`
-to contain the following:
-
+Checkout `stable/newton`
+Run `scripts/bootstrap-ansible.sh`
+Run `scripts/bootstrap-aio.sh`
+Modify `keystome.yml` affinity setting
 ```
 ---
 identity_hosts:
@@ -48,42 +46,12 @@ identity_hosts:
       keystone_container: 2
     ip: 172.29.236.100
 ```
-
-Next, I had to run a specific playbook to ensure the infrastructure modeled the new
-affinity count:
-
-```
-# cd /opt/openstack-ansible/
-# openstack-ansible playbooks/lxc-containers-create.yml
-```
-
-We can confirm we have an additional keystone container with an `lxc-ls`.
-After that we can rerun the HA Proxy installation playbook so that
-authentication is routed to both containers.
-
-```
-# openstack-ansible playbooks/haproxy-install.yml
-```
-
-HA Proxy should now be able to route traffic to both nodes. Our last step in
-setting up the initial deployment is rerunning the os_keystone role to ensure
-the new container is installed with stable/newton.
-
-```
-# openstack-ansible playbooks/os-keystone-install.yml
-```
-
-## Stable Newton Install Process
-
-1. Checkout `stable/newton`
-2. Run `scripts/bootstrap-ansible.sh`
-3. Run `openstack-ansible playbooks/setup-hosts.yml`
-4. Run `openstack-ansible playbooks/setup-infrastructure.yml`
-5. Modify `keystome.yml` affinity setting
-6. Run `openstack-ansible playbooks/os-keystone-install.yml`
+Run `openstack-ansible playbooks/setup-hosts.yml`
+Run `openstack-ansible playbooks/setup-infrastructure.yml`
+Run `openstack-ansible playbooks/os-keystone-install.yml`
 
 ## Upgrade Process
 
 1. Checkout `master`
 2. Run `scripts/bootstrap-ansible.sh`
-3. Run `openstack-ansible playbooks/os-keystone-install.yml keystone_upgrade=True`
+3. Run `openstack-ansible playbooks/os-keystone-install.yml -e keystone_upgrade=True`
