@@ -72,3 +72,12 @@ the new container is installed with stable/newton.
 ```
 # openstack-ansible playbooks/os-keystone-install.yml
 ```
+
+## Stable Newton Install Process
+
+1. Checkout `stable/newton`
+2. Run `scripts/bootstrap-ansible.sh`
+3. Run `openstack-ansible playbooks/setup-hosts.yml`
+4. Run `openstack-ansible playbooks/setup-infrastructure.yml`
+5. Modify `keystome.yml` affinity setting
+6. Run `openstack-ansible playbooks/os-keystone-install.yml`
