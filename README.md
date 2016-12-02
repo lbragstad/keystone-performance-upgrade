@@ -81,3 +81,9 @@ the new container is installed with stable/newton.
 4. Run `openstack-ansible playbooks/setup-infrastructure.yml`
 5. Modify `keystome.yml` affinity setting
 6. Run `openstack-ansible playbooks/os-keystone-install.yml`
+
+## Upgrade Process
+
+1. Checkout `master`
+2. Run `scripts/bootstrap-ansible.sh`
+3. Run `openstack-ansible playbooks/os-keystone-install.yml keystone_upgrade=True`
