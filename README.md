@@ -34,16 +34,17 @@ making only a couple modifications after laying down the initial infrastructure.
 
 ## Stable Newton Install Process
 
-1. Checkout `stable/newton`
-2. Run `scripts/bootstrap-ansible.sh`
-3. Run `scripts/bootstrap-aio.sh`
-4. Modify `keystome.yml` affinity setting [0]
-5. Run `openstack-ansible playbooks/setup-hosts.yml`
-6. Run `openstack-ansible playbooks/setup-infrastructure.yml`
-7. Run `openstack-ansible playbooks/os-keystone-install.yml`
+1. Update AIO host `apt-get update; apt-get dist-upgrade; reboot`
+2. Get OpenStack Ansible source `git clone https://git.openstack.org/openstack/openstack-ansible /opt/openstack-ansible; cd /opt/openstack-ansible`
+3. Checkout Newton `git checkout stable/newton; git checkout 15.0.0.0b1`
+4. Run `scripts/bootstrap-ansible.sh`
+5. Run `scripts/bootstrap-aio.sh`
+6. Modify `keystome.yml` affinity setting [0]
+7. Run `openstack-ansible playbooks/setup-hosts.yml`
+8. Run `openstack-ansible playbooks/setup-infrastructure.yml`
+9. Run `openstack-ansible playbooks/os-keystone-install.yml`
 
 [0] place the following in `/etc/openstack_deploy/conf.d/keystone.yml`:
-
 
 ```
 ---
