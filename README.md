@@ -38,14 +38,14 @@ making only a couple modifications after laying down the initial infrastructure.
 2. Run `scripts/bootstrap-ansible.sh`
 3. Run `scripts/bootstrap-aio.sh`
 4. Modify `keystome.yml` affinity setting
-```
----
-identity_hosts:
-  aio1:
-    affinity:
-      keystone_container: 2
-    ip: 172.29.236.100
-```
+   ```
+   ---
+   identity_hosts:
+   aio1:
+     affinity:
+       keystone_container: 2
+     ip: 172.29.236.100
+   ```
 5. Run `openstack-ansible playbooks/setup-hosts.yml`
 6. Run `openstack-ansible playbooks/setup-infrastructure.yml`
 7. Run `openstack-ansible playbooks/os-keystone-install.yml`
