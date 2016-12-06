@@ -1,0 +1,9 @@
+[2016-12-06 15:48:29,432] aio1-utility-container-677593b7/INFO/locust.main: Starting Locust 0.8a2
+[2016-12-06 15:48:29,433] aio1-utility-container-677593b7/INFO/locust.runners: Hatching and swarming 4 clients at the rate 1 clients/s...
+[2016-12-06 15:48:33,436] aio1-utility-container-677593b7/INFO/locust.runners: All locusts hatched: MyLocust: 4
+[2016-12-06 15:48:33,436] aio1-utility-container-677593b7/INFO/locust.runners: Resetting stats
+
+[2016-12-06 15:55:24,002] aio1-utility-container-677593b7/ERROR/stderr: KeyboardInterrupt
+[2016-12-06 15:55:24,002] aio1-utility-container-677593b7/ERROR/stderr: Tue Dec  6 15:55:23 2016
+[2016-12-06 15:55:24,002] aio1-utility-container-677593b7/ERROR/stderr: 
+[2016-12-06 15:55:24,003] aio1-utility-container-677593b7/INFO/locust.main: Shutting down (exit code 0), bye.
