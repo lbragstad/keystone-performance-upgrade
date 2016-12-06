@@ -19,9 +19,9 @@ are simply shell scripts using ApacheBench.
 ### Infrastructure
 
 * Hardware: [Rackspace Cloud Instance](https://www.rackspace.com/en-us/cloud/servers)
-    - 6 vCPUs
-    - 15 GB RAM
-    - 680 GB disk
+    - 8 vCPUs
+    - 30 GB RAM
+    - 1.2 TB disk
 * Operating System: Ubuntu 16.04 LTS (Xenial Xerus)
 
 ### Deployment
