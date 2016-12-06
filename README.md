@@ -35,7 +35,7 @@ I started by following the developer guide for an [all-in-one
 installation](http://docs.openstack.org/developer/openstack-ansible/developer-docs/quickstart-aio.html)
 making only a couple modifications after laying down the initial infrastructure.
 
-## Stable Newton Install Process
+#### Stable Newton Install Process
 
 1. Update AIO host `apt-get update; apt-get dist-upgrade; reboot`
 2. Get OpenStack Ansible source `git clone https://git.openstack.org/openstack/openstack-ansible /opt/openstack-ansible; cd /opt/openstack-ansible`
@@ -58,7 +58,7 @@ identity_hosts:
     ip: 172.29.236.100
 ```
 
-## Benchmarking
+#### Benchmarking
 
 The benchmark was run from the utility container provided in the AIO.
 
@@ -68,7 +68,7 @@ The benchmark was run from the utility container provided in the AIO.
 4. Install locust using `easy_install locustio`
 5. Run locust using `locust --no-web --clients=4 --hatch-rate=1 --only-summary --host=http://172.29.236.100 --port=5000 --logfile=results/locust.log`
 
-## Upgrade Process
+#### Upgrade Process
 
 1. Checkout `master`
 2. Run `scripts/bootstrap-ansible.sh`
