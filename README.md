@@ -58,6 +58,16 @@ identity_hosts:
     ip: 172.29.236.100
 ```
 
+## Benchmarking
+
+The benchmark was run from the utility container provided in the AIO.
+
+1. Confirm you can get a token using `source openrc; openstack token issue`
+2. Clone the benchmark repository `git clone https://github.com/lbragstad/keystone-performance-upgrade`
+3. Copy the password from `openrc` into `auth.json`
+4. Install locust using `easy_install locustio`
+5. Run locust using `locust --no-web --clients=4 --hatch-rate=1 --only-summary --host=http://172.29.236.100 --port=5000 --logfile=results/locust.log`
+
 ## Upgrade Process
 
 1. Checkout `master`
